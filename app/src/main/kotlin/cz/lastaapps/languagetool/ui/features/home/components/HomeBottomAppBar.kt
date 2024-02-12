@@ -52,11 +52,11 @@ fun HomeBottomAppBar(
                 .verticalScroll(rememberScrollState()),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            IconButtonTooltip(
+            /*IconButtonTooltip(
                 onClick = onSystemSpellCheck,
                 icon = Icons.Outlined.Keyboard,
                 contentDescription = stringResource(id = R.string.button_spell_check),
-            )
+            )*/
             IconButtonTooltip(
                 onClick = onHelpClick,
                 icon = Icons.Default.HelpOutline,
@@ -67,11 +67,11 @@ fun HomeBottomAppBar(
                 icon = Icons.Outlined.Settings,
                 contentDescription = stringResource(id = R.string.button_settings),
             )
-            IconButtonTooltip(
+            /*IconButtonTooltip(
                 onClick = onAbout,
                 icon = Icons.Outlined.Info,
                 contentDescription = stringResource(id = R.string.button_about),
-            )
+            )*/
         }
 
         ExtendedFloatingActionButton(
