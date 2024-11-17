@@ -11,14 +11,14 @@ plugins {
 
 android {
     namespace = "cz.lastaapps.languagetool"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "cz.lastaapps.languagetool"
         minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 35
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -33,6 +33,8 @@ android {
             extra.set("alwaysUpdateBuildId", false)
         }
         release {
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",

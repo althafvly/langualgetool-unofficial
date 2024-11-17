@@ -1,28 +1,27 @@
 [versions]
-aboutLibraries = "10.8.3"
+aboutLibraries = "10.9.1"
 accompanist = "0.32.0"
-agp = "8.2.2"
-androidx-activity = "1.8.2"
-androidx-compose-bom = "2024.02.00"
-androidx-core = "1.12.0"
+agp = "8.7.2"
+androidx-activity = "1.9.3"
+androidx-compose-bom = "2024.11.00"
+androidx-core = "1.15.0"
 androidx-core-splashcreen = "1.0.1"
-androidx-emoji2 = "1.4.0"
-androidx-lifecycle = "2.7.0"
-androidx-navigation = "2.7.7"
-androidx-test-ext-junit = "1.1.5"
+androidx-emoji2 = "1.5.0"
+androidx-lifecycle = "2.8.7"
+androidx-navigation = "2.8.4"
+androidx-test-ext-junit = "1.2.1"
 arrow = "1.2.0"
 compose-compiler = "1.5.3"
-espresso-core = "3.5.1"
+espresso-core = "3.6.1"
 junit = "4.13.2"
 koin = "3.5.3"
 kotest = "5.6.2"
-kotlin = "1.9.10"
-kotlin-coroutines = "1.7.3"
-ktlint = "11.5.0"
+kotlin = "2.0.21"
+kotlin-coroutines = "1.9.0"
+ktlint = "12.1.1"
 ktor = "2.3.4"
 
 [libraries]
-aboutLibraries-compose = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutLibraries" }
 aboutLibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutLibraries" }
 accompanist-drawablePainters = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanist" }
 accompanist-navigationMaterial = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
@@ -31,7 +30,7 @@ accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeho
 accompanist-placeholder-material3 = { module = "com.google.accompanist:accompanist-placeholder-material3", version.ref = "accompanist" }
 accompanist-systemUi = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
-androidx-annotation = "androidx.annotation:annotation:1.7.1"
+androidx-annotation = "androidx.annotation:annotation:1.9.1"
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose-bom" }
 androidx-compose-iconsCore = { module = "androidx.compose.material:material-icons-core" }
 androidx-compose-iconsExtended = { module = "androidx.compose.material:material-icons-extended" }
@@ -43,10 +42,10 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-constraintlayout-compose = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+androidx-constraintlayout-compose = "androidx.constraintlayout:constraintlayout-compose:1.1.0"
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidx-core-splashcreen" }
-androidx-datastore = "androidx.datastore:datastore-preferences:1.0.0"
+androidx-datastore = "androidx.datastore:datastore-preferences:1.1.1"
 androidx-emoji2-bundled = { module = "androidx.emoji2:emoji2-bundled", version.ref = "androidx-emoji2" }
 androidx-emoji2-core = { module = "androidx.emoji2:emoji2", version.ref = "androidx-emoji2" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
@@ -62,7 +61,7 @@ arrowkt-core = { module = "io.arrow-kt:arrow-core" }
 arrowkt-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines" }
 arrowkt-fx-stm = { module = "io.arrow-kt:arrow-fx-stm" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
-google-material = "com.google.android.material:material:1.11.0"
+google-material = "com.google.android.material:material:1.12.0"
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 koin-android-compose = "io.insert-koin:koin-androidx-compose:3.5.3"
 koin-android-core = { module = "io.insert-koin:koin-android", version.ref = "koin" }
@@ -75,9 +74,8 @@ kotlinx-coroutines-common = { module = "org.jetbrains.kotlinx:kotlinx-coroutines
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
 kotlinx-collection = "org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5"
 kotlinx-dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.1"
-kotlinx-serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0"
+kotlinx-serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3"
 ktor-bom = { group = "io.ktor", name = "ktor-bom", version.ref = "ktor" }
-ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio" }
 ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core" }
 ktor-client-encoding = { module = "io.ktor:ktor-client-encoding" }
@@ -138,7 +136,6 @@ kotlinx = [
     "kotlinx-serializationJson",
 ]
 ktor-client = [
-    # "ktor-client-cio",
     "ktor-client-contentNegotiation",
     "ktor-client-core",
     "ktor-client-encoding",
