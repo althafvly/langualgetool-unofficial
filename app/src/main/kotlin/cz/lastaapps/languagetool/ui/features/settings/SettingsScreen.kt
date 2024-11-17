@@ -26,6 +26,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -33,6 +34,7 @@ import cz.lastaapps.languagetool.R
 import cz.lastaapps.languagetool.ui.features.settings.model.ApiUrlState
 import cz.lastaapps.languagetool.ui.features.settings.model.CredentialsState
 import cz.lastaapps.languagetool.ui.theme.PaddingTokens
+import cz.lastaapps.languagetool.ui.util.hasInternetConnection
 
 @Composable
 internal fun SettingsScreen(
@@ -142,6 +144,7 @@ private fun Checked(
         modifier = modifier.animateContentSize(),
         horizontalArrangement = Arrangement.spacedBy(PaddingTokens.Medium),
     ) {
+        val context = LocalContext.current
         if (areSame && isValid != null) {
             val color = if (isValid) {
                 MaterialTheme.colorScheme.secondary
@@ -156,7 +159,9 @@ private fun Checked(
             val text = if (isValid) {
                 R.string.text_checked
             } else {
-                R.string.text_invalid
+                if (hasInternetConnection(context))
+                    R.string.text_invalid
+                else R.string.no_internet_connection
             }.let { stringResource(id = it) }
 
             Icon(icon, contentDescription = null, tint = color)

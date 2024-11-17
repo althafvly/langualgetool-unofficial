@@ -9,12 +9,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
+import cz.lastaapps.languagetool.R
+import cz.lastaapps.languagetool.core.error.DomainError
 import cz.lastaapps.languagetool.core.error.getMessage
 import cz.lastaapps.languagetool.ui.features.home.components.ActionChips
 import cz.lastaapps.languagetool.ui.features.home.components.ErrorSuggestionRow
 import cz.lastaapps.languagetool.ui.features.home.components.HomeBottomAppBar
 import cz.lastaapps.languagetool.ui.features.home.components.TextCorrectionField
+import cz.lastaapps.languagetool.ui.util.hasInternetConnection
 import kotlinx.coroutines.launch
 
 
@@ -33,15 +37,24 @@ internal fun HomeDest(
     val state by viewModel.flowState
     var cursorPosition by remember { mutableStateOf(0) }
     val uriHandler = LocalUriHandler.current
+    val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(viewModel) {
         viewModel.onAppear()
     }
 
+    suspend fun onError(error: DomainError) {
+        val message = if (hasInternetConnection(context))
+            error.getMessage() else context.getString(R.string.no_internet_connection)
+        hostState.showSnackbar(message)
+    }
+
     LaunchedEffect(state.error) {
         state.error?.let {
-            scope.launch { hostState.showSnackbar(it.getMessage()) }
+            scope.launch {
+                onError(it)
+            }
             viewModel.dismissError()
         }
     }
@@ -75,7 +88,9 @@ internal fun HomeDest(
             },
             onClear = { viewModel.onTextChanged("") },
             onError = {
-                scope.launch { hostState.showSnackbar(it.getMessage()) }
+                scope.launch {
+                    onError(it)
+                }
             },
             isPicky = state.isPicky,
             onPickyClick = { viewModel.setIsPicky(!state.isPicky) },

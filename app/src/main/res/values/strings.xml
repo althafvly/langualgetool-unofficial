@@ -80,4 +80,5 @@
     <string name="text_premium">Premium</string>
     <string name="title_unknown_rule">Unspecified rule</string>
     <string name="button_explain">Explanation</string>
+    <string name="no_internet_connection">No internet connection</string>
 </resources>
