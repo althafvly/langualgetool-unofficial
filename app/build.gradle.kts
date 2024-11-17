@@ -90,4 +90,6 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.google.material)
+    implementation(libs.slf4j.simple)
+
 }

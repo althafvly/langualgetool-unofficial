@@ -16,6 +16,7 @@ kotlin = "2.0.21"
 kotlin-coroutines = "1.9.0"
 ktlint = "12.1.1"
 ktor = "2.3.4"
+slf4jSimple = "2.0.9"
 
 [libraries]
 aboutLibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutLibraries" }
@@ -71,6 +72,7 @@ ktor-client-encoding = { module = "io.ktor:ktor-client-encoding" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp" }
 ktor-client-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jSimple" }
 
 [plugins]
 aboutLibraries = "com.mikepenz.aboutlibraries.plugin:10.6.1"
